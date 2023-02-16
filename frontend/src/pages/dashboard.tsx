@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect, useState } from "react";
+import styled from "styled-components";
 import DisplayCard from "../components/display-card";
 import { Movie } from "../types";
 
@@ -12,13 +13,22 @@ const Dashboard: FunctionComponent<DashboardProps> = () => {
       .then((res) => res.json())
       .then((da) => SetMovice(da));
   }, []);
+
   return (
-    <div>
+    <StyledContainer>
       {movies.map((m) => (
         <DisplayCard {...m} />
       ))}
-    </div>
+    </StyledContainer>
   );
 };
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-items: center;
+`;
 
 export default Dashboard;

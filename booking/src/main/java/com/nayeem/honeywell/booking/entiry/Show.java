@@ -2,7 +2,6 @@ package com.nayeem.honeywell.booking.entiry;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -15,7 +14,4 @@ public class Show {
     private int id;
 
     private LocalDateTime startTime;
-
-    @OneToOne
-    private Movie movie;
 }

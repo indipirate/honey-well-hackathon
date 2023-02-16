@@ -10,7 +10,6 @@ public class Theater {
 
     @Id
     private int id;
-
     private String name;
 
 }

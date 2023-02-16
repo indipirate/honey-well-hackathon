@@ -15,10 +15,12 @@ public class Screen {
     @Id
     private int id;
     @OneToMany
-    private List<Show> show;
+    private List<Show> shows;
     @OneToMany
     private List<Seat> seats;
     @OneToOne
     private Theater theater;
+    @OneToOne
+    private Movie movie;
 
 }

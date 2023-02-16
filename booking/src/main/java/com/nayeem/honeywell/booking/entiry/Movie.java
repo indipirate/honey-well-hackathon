@@ -18,6 +18,5 @@ public class Movie {
     private LocalDate releaseDate;
 
     private int length;
-//
-//    private List<Actor>
+
 }

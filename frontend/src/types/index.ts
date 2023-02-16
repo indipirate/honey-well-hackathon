@@ -1,7 +1,6 @@
 export interface Show {
   id: number;
   startTime: string;
-  movie: Movie;
 }
 
 export interface Movie {
@@ -11,11 +10,17 @@ export interface Movie {
   lenght: number;
 }
 
-export interface Seat {
+export interface SeatTier {
   id: number;
   name: string;
-  price: number;
-  isSelected: boolean;
+  price: number;  
+}
+
+export interface Seat {
+  id: number;
+  capacity: number;
+  tier: SeatTier;
+  rows: number;
 }
 
 export interface Theater {
@@ -25,7 +30,21 @@ export interface Theater {
 
 export interface Screen {
   id: number;
-  show: Show[];
   seats: Seat[];
+  movie: Movie;
   theater: Theater;
+  shows: Show[];
+}
+
+export interface BookedSeat {
+  id: number;
+  tier: SeatTier;
+}
+export interface Ticket {
+  id: number;
+  movieId: Movie;
+  screenId: number;
+  theater: Theater;
+  seats: BookedSeat[];
+  show: Show;
 }

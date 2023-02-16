@@ -1,23 +1,22 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Booking from "./pages/booking";
 import Dashboard from "./pages/dashboard";
-import Screen from "./pages/screen";
+import Listing from "./pages/listing";
+import SelectSeat from "./pages/select-seat";
 
 function App() {
   return (
-    <Router>
-      <Route path="/">
-        <Dashboard />
-      </Route>
-      <Route path="/select">
-        <Screen />
-      </Route>
-      <Route path="/book">
-        <Booking />
-      </Route>
-    </Router>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="listing/:listBy/:id" element={<Listing />} />
+          <Route path="select/:screenId/:showId" element={<SelectSeat />} />
+          <Route path="book" element={<Booking />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
